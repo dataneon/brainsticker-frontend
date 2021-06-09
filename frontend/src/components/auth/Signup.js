@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
 function Signup() {
+  // form control
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password1, setPassword1] = useState('');
   const [password2, setPassword2] = useState('');
+  // errors pushes any errors into it
   const [errors, setErrors] = useState(false);
+  // loading is used to allow a buffer time between login request and rendering
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -17,8 +20,9 @@ function Signup() {
   }, []);
 
   const onSubmit = e => {
-    e.preventDefault();
+    e.preventDefault(); // keeps the page from refreshing when form is submitted
 
+    // creating a user object with values entered in the form
     const user = {
       email: email,
       username: username,
@@ -27,6 +31,7 @@ function Signup() {
       password2: password2
     };
 
+    // fetch request uses `user`
     fetch('http://127.0.0.1:8000/api/v1/users/auth/register/', {
       method: 'POST',
       headers: {
@@ -36,11 +41,15 @@ function Signup() {
     })
       .then(res => res.json())
       .then(data => {
+        // checking to see if the request was successful
         if (data.key) {
+          // set the token in local storage to one returned by API
           localStorage.clear();
           localStorage.setItem('token', data.key);
+          // redirect the now authenticated user to the dashboard
           window.location.replace('http://localhost:3000/dashboard');
         } else {
+          // handles any errors
           setEmail('');
           setUsername('');
           setPassword1('');

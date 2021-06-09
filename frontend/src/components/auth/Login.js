@@ -22,8 +22,6 @@ function Login() {
     e.preventDefault(); // keeps the page from refreshing when form is submitted
 
     // creating a user object with values entered in the form
-    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    // this might also need a username field
     const user = {
       email: email,
       username: username,

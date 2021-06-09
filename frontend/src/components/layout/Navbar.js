@@ -12,7 +12,7 @@ function Navbar(props) {
     
     return (
         <nav>
-            <h1>Django React Auth</h1>
+            <h1>Brainsticker</h1>
             <ul>
                 {isAuth === true ? (
                     <Fragment>
