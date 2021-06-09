@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 
 // this will be called by Dashboard to pull up a user's canvases
-function Canvas({userID}) {
+function CanvasList({userID}) {
     const [canvases, setCanvases] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -15,7 +15,7 @@ function Canvas({userID}) {
                 let tmp_canvases = []
                 for (let i = 0; i < jsonInfo.length; i++) {
                     // check canvases for those made by current user
-                    if (jsonInfo[i].user == userID) {
+                    if (jsonInfo[i].user === userID) {
                         tmp_canvases.push(jsonInfo[i])
                     }
                 }
@@ -27,13 +27,17 @@ function Canvas({userID}) {
 
     return (
         <div>
-            <p>You are on the canvas, and your ID is: {userID}</p>
-            <p>Your canvases are below:</p>
-            {canvases.map(canvas => (
-                <p key={canvas.canvas_name}>{canvas.canvas_name}</p>
-            ))}
+            {loading === false && (
+                <Fragment>
+                    <p>You are on the canvas; your ID is: {userID}</p>
+                    <p>Your canvases are below:</p>
+                    {canvases.map(canvas => (
+                        <h5 key={canvas.canvas_name}>{canvas.canvas_name}</h5>
+                    ))}
+                </Fragment>
+            )}
         </div>
     );
 }
 
-export default Canvas;
+export default CanvasList;

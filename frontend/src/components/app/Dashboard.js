@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Fragment } from 'react';
-import Canvas from './Canvas'
+import CanvasList from './CanvasList'
 
 function Dashboard() {
   const [userEmail, setUserEmail] = useState('');
@@ -22,25 +22,25 @@ function Dashboard() {
         .then(res => res.json())
         .then(data => {
           setUserEmail(data.email);
-          setUserID(data.pk) // id is `pk`
+          setUserID(data.pk)
           setLoading(false);
         });
     }
   }, []);
-
 
   return (
   <div>
     {loading === false && (
       <Fragment>
         <h2>Dashboard</h2>
-        <p>Hello {userEmail}! You are user #{userID}</p>
-        {/* Sending userID to Canvas as props */}
-        <Canvas userID = {userID}/>
+        <h4>Hello {userEmail}!</h4>
+        <p></p>
+        {/* send userID to CanvasList as props */}
+        <CanvasList userID = {userID}/>
       </Fragment>
     )}
   </div>
-);
+  );
 };
 
 export default Dashboard;
