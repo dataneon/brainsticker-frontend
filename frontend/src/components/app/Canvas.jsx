@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 
 // this loads an individual canvas, linked to from CanvasList
 // it will receive the canvas id/url via props
-function Canvas(canvasID) {
+function Canvas({canvasID}) {
     const [notes, setNotes] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -29,10 +29,10 @@ function Canvas(canvasID) {
         <div>
             {loading === false && (
                 <Fragment>
-                    <p>You are on the canvas; your ID is: {userID}</p>
+                    <p>You are on the canvas; the canvasID is: {canvasID}</p>
                     <p>Your notes are below:</p>
-                    {canvases.map(canvas => (
-                        <h5 key={canvas.canvas_name}>{canvas.canvas_name}</h5>
+                    {notes.map(note => (
+                        <h5 key={note.content}>{note.content}</h5>
                     ))}
                 </Fragment>
             )}

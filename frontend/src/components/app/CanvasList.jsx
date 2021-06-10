@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // import Canvas from './Canvas';
 
 // this will be called by Dashboard to pull up a user's canvases
@@ -43,11 +44,19 @@ function CanvasList({userID}) {
 
     console.log(canvases[0])
 
+    // TODO: pass props to canvas
+    // Does CanvasList handle the route here?
+
+    // My idea is that the link would have a specific url using the slug;
+    // then we could pass some form of ID to the Canvas component
+    // and load the Canvas component. This is why I think Route might be
+    // necessary. 
+
     let list = canvases.map(item => {
         return (
             <div className="canvas" key={item.canvas_name}>
                 <p>
-                    <Link to={"/canvases/" + item.slugNum}>
+                    <Link to={"/canvas/" + item.slugNum}>
                         {item.canvas_name}
                     </Link>{" "}
                 </p>
