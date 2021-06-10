@@ -19,7 +19,7 @@ function App() {
           <Route path='/signup' component={Signup} exact />
           <Route path='/logout' component={Logout} exact />
           <Route path='/dashboard' component={Dashboard} exact />
-          <Route path='/canvas' component={Canvas} exact/>
+          <Route path='/canvas/:id' component={Canvas} exact/>
         </Switch>
       </Router>
     </div>
