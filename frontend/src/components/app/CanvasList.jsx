@@ -1,6 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Canvas from './Canvas'
 
 
 // this will be called by Dashboard to pull up a user's canvases
@@ -61,13 +60,12 @@ function CanvasList({userID}) {
     // const [tempIDState, setTempIDState] = useState();
     let list = canvases.map(item => {
         let tmp_name = item.canvas_name
-        // note that slugNum is a Number here.
+        // note that item.slugNum is a Number here
         let tmp_id = item.slugNum
-        console.log(tmp_name)
-        console.log(tmp_id)
-        console.log(typeof tmp_id)
+        // console.log(tmp_name)
+        // console.log(tmp_id)
+        // console.log(typeof tmp_id)
 
-        
         return (
             <div className="canvas" key={tmp_name}>
                 <p>
@@ -87,19 +85,3 @@ function CanvasList({userID}) {
 }
 
 export default CanvasList;
-
-
-// old, but working return
-// return (
-//     <div>
-//         {loading === false && (
-//             <Fragment>
-//                 <p>This is canvasList; your ID is: {userID}</p>
-//                 <p>Your canvases are below:</p>
-//                 {canvases.map(canvas => (
-//                     <h5 key={canvas.canvas_name}>{canvas.canvas_name}</h5>
-//                 ))}
-//             </Fragment>
-//         )}
-//     </div>
-// );

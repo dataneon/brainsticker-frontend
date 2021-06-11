@@ -24,7 +24,7 @@ function Canvas() {
                 console.log(jsonInfo)
                 // array for current canvas's notes
                 let tmp_notes = []
-                for (let i = 0; i < jsonInfo.length; i++ ) {
+                for (let i = 0; i < jsonInfo.length; i++) {
                     // `jsonInfo[i].canvas` is a number, while `id` is a string
                     // so we convert `id` to a number for the comparison
                     let idNum = parseInt(id)
