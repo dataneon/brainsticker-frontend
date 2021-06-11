@@ -7,6 +7,7 @@ import Signup from './components/auth/Signup';
 import Logout from './components/auth/Logout';
 import Dashboard from './components/app/Dashboard';
 import Canvas from './components/app/Canvas';
+import AddCanvas from './components/app/AddCanvas';
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
           <Route path='/signup' component={Signup} exact />
           <Route path='/logout' component={Logout} exact />
           <Route path='/dashboard' component={Dashboard} exact />
-          <Route path='/canvas/:id' component={Canvas} exact/>
+          <Route path='/canvas/:id' component={Canvas} exact />
+          <Route path='/addcanvas/' component={AddCanvas} exact />
         </Switch>
       </Router>
     </div>

@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+// import MyEditor from './MyEditor';
 
 // this loads an individual canvas, linked to from CanvasList
 // it will receive the canvas id by using the url via `useParams()`
@@ -13,7 +14,7 @@ function Canvas() {
     // this id comes from the url, specifically what comes after `/canvas/` 
     // `id`, when grabbed using `useParams()` is a string.
     // `id` will be used for the sake of identifying particular canvases
-    console.log(typeof id, id)
+    // console.log(typeof id, id)
 
 
     // function to get notes from localhost:8000/notes/
@@ -21,7 +22,7 @@ function Canvas() {
         fetch('http://localhost:8000/notes/')
             .then(res => res.json())
             .then(jsonInfo => {
-                console.log(jsonInfo)
+                // console.log(jsonInfo)
                 // array for current canvas's notes
                 let tmp_notes = []
                 for (let i = 0; i < jsonInfo.length; i++) {

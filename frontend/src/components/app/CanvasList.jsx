@@ -1,5 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { DataContext } from '../DataContext';
+import AddCanvas from './AddCanvas';
 
 
 // this will be called by Dashboard to pull up a user's canvases
@@ -62,9 +64,6 @@ function CanvasList({userID}) {
         let tmp_name = item.canvas_name
         // note that item.slugNum is a Number here
         let tmp_id = item.slugNum
-        // console.log(tmp_name)
-        // console.log(tmp_id)
-        // console.log(typeof tmp_id)
 
         return (
             <div className="canvas" key={tmp_name}>
@@ -78,6 +77,18 @@ function CanvasList({userID}) {
     })
     return (
         <div>
+            <DataContext.Provider value={userID}>
+                {/* <Link to={"/addcanvas/"}>Add new canvas</Link> */}
+                {/* <Link
+                    to={{
+                        pathname: "/addcanvas/",
+                        state: { userID: userID}
+                    }}
+                    >
+                    Add new canvas
+                </Link> */}
+                <AddCanvas userID={userID}/>
+            </DataContext.Provider>
             <h3>List of canvases</h3>
             {list}
         </div>
