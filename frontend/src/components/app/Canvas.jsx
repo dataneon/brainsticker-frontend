@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import AddNote from './AddNote';
 // import MyEditor from './MyEditor';
 
 // this loads an individual canvas, linked to from CanvasList
@@ -44,8 +45,9 @@ function Canvas() {
         <div>
             {loading === false && (
                 <Fragment>
-                    <p>You are on the canvas; the id is: {id}</p>
-                    <p>Your notes are below:</p>
+                    <p>You are on the canvas; the canvas_id is: {id}</p>
+                    <AddNote id={id}/>
+                    <p>List of notes for canvas:</p>
                     {notes.map(note => (
                         <h5 key={note.content}>{note.content}</h5>
                     ))}

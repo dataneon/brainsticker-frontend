@@ -1,5 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react';
-import CanvasList from './CanvasList'
+import AddCanvas from './AddCanvas';
+import CanvasList from './CanvasList';
 
 function Dashboard() {
   const [userEmail, setUserEmail] = useState('');
@@ -36,6 +37,7 @@ function Dashboard() {
         <h4>Hello {userEmail}!</h4>
         <p></p>
         {/* send userID to CanvasList as props */}
+        <AddCanvas userID={userID}/>
         <CanvasList userID = {userID}/>
       </Fragment>
     )}

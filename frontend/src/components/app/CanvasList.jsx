@@ -1,8 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { DataContext } from '../DataContext';
-import AddCanvas from './AddCanvas';
-
 
 // this will be called by Dashboard to pull up a user's canvases
 function CanvasList({userID}) {
@@ -43,33 +41,19 @@ function CanvasList({userID}) {
             .then(setLoading(false))
     }, []);
 
-    // console.log(canvases[0])
-
-    // TODO: pass props to canvas
-    // Does CanvasList handle the route here?
-
-    // My idea is that the link would have a specific url using the slug;
-    // then we could pass some form of ID to the Canvas component and load
-    // the Canvas component. This is why I think Route might be necessary. 
-    // However, they could also simply all route to the  same {component},
-    // so that the URL would simply be component. This does violate the ethos of
-    // having the URL that the user seeing not match up completely with the a
-    // path into directories.
-
-    // This other way might also be able to do without my getCanvasURLID()
-    // although it seems like the best option for its job right now
-
-    // const [tempIDState, setTempIDState] = useState();
     let list = canvases.map(item => {
         let tmp_name = item.canvas_name
-        // note that item.slugNum is a Number here
+        // note that `item.slugNum` is a Number here
         let tmp_id = item.slugNum
 
         return (
-            <div className="canvas" key={tmp_name}>
+            <div className="canvas" key={tmp_id}>
                 <p>
                     <Link to={"/canvas/" + tmp_id} >
                         {tmp_name}
+                    </Link>{" "}
+                    <Link to={"/canvas/" + tmp_id + "/editcanvas/"} >
+                        (edit)
                     </Link>{" "}
                 </p>
             </div>
@@ -78,16 +62,6 @@ function CanvasList({userID}) {
     return (
         <div>
             <DataContext.Provider value={userID}>
-                {/* <Link to={"/addcanvas/"}>Add new canvas</Link> */}
-                {/* <Link
-                    to={{
-                        pathname: "/addcanvas/",
-                        state: { userID: userID}
-                    }}
-                    >
-                    Add new canvas
-                </Link> */}
-                <AddCanvas userID={userID}/>
             </DataContext.Provider>
             <h3>List of canvases</h3>
             {list}

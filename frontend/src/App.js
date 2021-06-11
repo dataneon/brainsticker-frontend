@@ -8,6 +8,7 @@ import Logout from './components/auth/Logout';
 import Dashboard from './components/app/Dashboard';
 import Canvas from './components/app/Canvas';
 import AddCanvas from './components/app/AddCanvas';
+import EditCanvas from './components/app/EditCanvas';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path='/dashboard' component={Dashboard} exact />
           <Route path='/canvas/:id' component={Canvas} exact />
           <Route path='/addcanvas/' component={AddCanvas} exact />
+          <Route path='/canvas/:id/editcanvas/' component={EditCanvas} exact />
         </Switch>
       </Router>
     </div>
