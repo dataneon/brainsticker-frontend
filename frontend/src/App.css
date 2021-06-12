@@ -1,10 +1,32 @@
-.App {
-  text-align: center;
+/* Set box-sizing */
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  text-decoration: none;
+}
+
+/* Color variables */
+:root {
+  --primary: #17BEBB;
+  --secondary: #8C1848;
+  --secondary-light: #DE3F82;
+  --white: #fff;
+  /* Add a muted to the existing color variables in :root */
+  --muted: #62555A;
+}
+
+.note-list {
+  /* display: flex;
+  flex-direction: column; */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: minmax(250px, auto);
+  grid-gap: 1rem;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 1rem;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -13,26 +35,21 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+@media (min-width: 600px) {
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .note-list {
+    column-count: 2;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (min-width: 1000px) {
+  .note-list {
+    column-count: 3;
+  }
+}
+
+@media (min-width: 1400px) {
+  .note-list {
+    column-count: 4;
   }
 }

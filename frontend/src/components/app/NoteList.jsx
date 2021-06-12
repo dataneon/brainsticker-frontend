@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 // this is called by Canvas
 function NoteList({canvasID}) {
     // `canvasID` is the canvas_id, and it is a string of a number
-    // console.log(typeof canvasID, canvasID)
+
     const [loading, setLoading] = useState(true);
     const [notes, setNotes] = useState([]);
 
@@ -26,7 +26,6 @@ function NoteList({canvasID}) {
                 for (let i = 0; i < jsonInfo.length; i++) {
                     // check notes for those with matching `canvasID`
                     // by parsing `canvasID` as an integer
-                    // console.log(parseInt(canvasID))
                     if (jsonInfo[i].canvas === parseInt(canvasID)) {
                         let tempObj = jsonInfo[i]
                         let slugNum = getNoteURLID(tempObj.note_url)
@@ -37,7 +36,6 @@ function NoteList({canvasID}) {
                 }
                 // set array of notes to ntes state
                 setNotes(tempNotes)
-                // console.log(tempNotes)
             })
             .then(setLoading(false))
     }, [])
@@ -46,7 +44,7 @@ function NoteList({canvasID}) {
         let itemContent = item.content
         let tempID = item.slugNum
         return (
-            <div className="notes" key={tempID}>
+            <div className="note" key={tempID}>
                 <p>
                     {/* <Link to={"/canvas/" + canvasID + "/note/" + tempID} > */}
                         {itemContent}{" "}
@@ -65,7 +63,9 @@ function NoteList({canvasID}) {
                 (
                     <Fragment>
                     <h3>List of notes</h3>
-                    {list}
+                    <div className="note-list">
+                        {list}
+                    </div>
                     </Fragment>
                 )
             }

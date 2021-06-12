@@ -33,7 +33,7 @@ function Canvas() {
             {loading === false &&
                 (
                     <Fragment>
-                        <p>You are on the canvas "{canvasName}"</p>
+                        <h2>Canvas: {canvasName}</h2>
                         <AddNote canvasID={canvasID} />
                         {/* <p>List of notes for canvas:</p> */}
                         <NoteList canvasID={canvasID} />

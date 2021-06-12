@@ -3,12 +3,14 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 function EditNote() {
+    // pulling info from URL
     const { canvasID } = useParams()
     const { noteID } = useParams()
 
     const initialState = {canvas: canvasID, content: ''};
     const [formState, setFormState] = useState(initialState);
 
+    // oldContent used so that we can display what will be replaced
     const [oldContent, setOldContent] = useState();
 
     // `loading` is used as a guard operator to wait until `useEffect` is finished
@@ -19,7 +21,7 @@ function EditNote() {
         fetch(`http://localhost:8000/notes/${noteID}`)
             .then(res => res.json())
             .then(jsonInfo => {
-                console.log(jsonInfo)
+                // console.log(jsonInfo)
                 setOldContent(jsonInfo.content)
             })
             .then(setLoading(false))

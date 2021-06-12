@@ -6,8 +6,7 @@ import { DataContext } from '../DataContext';
 function CanvasList({userID}) {
     const [canvases, setCanvases] = useState([]);
 
-    // loading is used as a guard operator that waits
-    // for the useEffect to be completed
+    // loading is used as a guard operator that waits for useEffect
     const [loading, setLoading] = useState(true);
 
     // function gets the last digits of the url
@@ -46,7 +45,7 @@ function CanvasList({userID}) {
 
     let list = canvases.map(item => {
         let tmp_name = item.canvas_name
-        // note that `item.slugNum` is a Number here
+        // note that `item.slugNum` is a number here
         let tmp_id = item.slugNum
 
         return (
@@ -67,10 +66,12 @@ function CanvasList({userID}) {
         <div>
             {loading === false &&
                 (
-                    <DataContext.Provider value={userID}>
-                    <h3>List of canvases</h3>
-                    {list}
-                    </DataContext.Provider>
+                    <Fragment>
+                        <DataContext.Provider value={userID}>
+                        <h3>List of canvases</h3>
+                        {list}
+                        </DataContext.Provider>
+                    </Fragment>
                 )
             }
         </div>
