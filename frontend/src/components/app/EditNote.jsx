@@ -24,6 +24,14 @@ function EditNote() {
         setFormState(initialState);
     }
 
+    const handleDelete = (event) => {
+        event.preventDefault();
+        axios.delete(`http://localhost:8000/notes/${noteID}`)
+        .then(res => {
+            window.location.replace(`http://localhost:3000/canvas/${canvasID}`)
+        })
+    }
+
     return (
         <div>
             EditNote {noteID} from canvas {canvasID}
@@ -36,6 +44,9 @@ function EditNote() {
                     value={formState.content}
                 />
                 <button type="submit">Submit</button>
+            </form>
+            <form onSubmit={handleDelete}>
+                <button type="submit">DELETE</button>
             </form>
         </div>
     );

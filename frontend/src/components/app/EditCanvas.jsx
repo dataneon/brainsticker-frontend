@@ -17,6 +17,7 @@ function EditCanvas(props) {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(formState);
+        // patch updates instead of adding a new element
         axios.patch(`http://localhost:8000/canvases/${canvasID}`, formState)
         .then(res => {
             window.location.replace(`http://localhost:3000/dashboard/`)
