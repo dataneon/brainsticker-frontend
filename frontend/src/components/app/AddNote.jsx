@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-function AddNote({id}) {
-    const initialState = {canvas: id, content: ''};
+function AddNote({canvasID}) {
+    const initialState = {canvas: canvasID, content: ''};
     const [formState, setFormState] = useState(initialState);
 
     const handleChange = (event) => {
@@ -14,7 +14,7 @@ function AddNote({id}) {
         console.log(formState);
         axios.post("http://localhost:8000/notes/", formState)
         .then(res => {
-            window.location.replace(`http://localhost:3000/canvas/${id}`)
+            window.location.replace(`http://localhost:3000/canvas/${canvasID}`)
         })
         // clear the form
         setFormState(initialState);
@@ -22,7 +22,7 @@ function AddNote({id}) {
 
     return (
         <div>
-            Add a note for canvas {id}:
+            Add a note for canvas {canvasID}:
             <form onSubmit={handleSubmit}>
                 <label htmlFor="content">Content:</label>
                 <input

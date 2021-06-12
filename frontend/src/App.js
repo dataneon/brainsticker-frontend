@@ -9,6 +9,7 @@ import Dashboard from './components/app/Dashboard';
 import Canvas from './components/app/Canvas';
 import AddCanvas from './components/app/AddCanvas';
 import EditCanvas from './components/app/EditCanvas';
+import EditNote from './components/app/EditNote';
 
 function App() {
   return (
@@ -21,9 +22,10 @@ function App() {
           <Route path='/signup' component={Signup} exact />
           <Route path='/logout' component={Logout} exact />
           <Route path='/dashboard' component={Dashboard} exact />
-          <Route path='/canvas/:id' component={Canvas} exact />
-          <Route path='/addcanvas/' component={AddCanvas} exact />
-          <Route path='/canvas/:id/editcanvas/' component={EditCanvas} exact />
+          <Route path='/canvas/:canvasID' component={Canvas} exact />
+          {/* <Route path='/addcanvas/' component={AddCanvas} exact /> */}
+          <Route path='/canvas/:canvasID/editcanvas/' component={EditCanvas} exact />
+          <Route path='/canvas/:canvasID/editnote/:noteID' component={EditNote} exact />
         </Switch>
       </Router>
     </div>
