@@ -1,3 +1,7 @@
+/* Importing fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Nunito+Sans:wght@400;800&display=swap');
+
 /* Set box-sizing */
 * {
   box-sizing: border-box;
@@ -5,20 +9,24 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
   /* background color */
-  background-color: #372F32;
+  background-color: #F2C7BA;
 
-  color: white;
+  color: #372F32;
 }
 
 a {
   text-decoration: none;
+}
+
+form {
+  margin: 1rem 0 3rem 1.5rem;
 }
 
 /* Style the button and tell it not to grow */
@@ -37,17 +45,34 @@ a {
 
 /* input fields */
 input {
-  background-color: darkgray;
+  background-color: #EBAC98;
   /* border: 2px solid white; */
-  color: var(--white);
+  color: var(--muted);
   flex-grow: 0;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   /* padding: 0.5rem 1rem; */
-  width: 20%;
+  width: 25%;
+  /* font-weight: bold; */
+}
+
+nav {
+  -webkit-box-shadow: 2px 2px 4px 1px black;
+  box-shadow: 2px 2px 4px 1px black;
+  margin: 1.5rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  background-color: #EFBAA9;
 }
 
 ul {
   list-style-type: none;
+}
+
+.auth-input-buttons {
+  margin-top: 0.5rem;
+  background-color: var(--primary);
+  color: white;
+
 }
 
 .canvas-li-name {
@@ -60,9 +85,31 @@ ul {
   margin: 2rem 0 0 1rem;
 }
 
+.delete-button {
+  margin: 0 0 1rem 0rem;
+  color: red;
+  font-weight: bold;
+  padding: 0.25rem;
+}
+
 .nav-links {
   color: #DE6E4B;
   font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.note {
+  color: black;
+  margin: 1rem;
+  background-color: #FD8835;
+  height: 10rem;
+  width: 15rem;
+  padding: 1rem;
+  font-weight: bold;
+  -webkit-box-shadow: 2px 2px 4px 1px black;
+  box-shadow: 2px 2px 4px 1px black;
+  font-family: 'Caveat';
+  font-size: 1.5rem;
 }
 
 .note-list {
@@ -70,24 +117,15 @@ ul {
   flex-direction: column;
 }
 
-.note {
-  color: black;
-  margin: 1rem;
-  background-color: lightseagreen;
-  height: 10rem;
-  width: 15rem;
-  padding: 1rem;
-  font-weight: bold;
-}
-
 .edit-span {
   font-size: 0.75rem;
-  color: lightgray;
+  color: #372F32;
 }
 
 .edit-note-span {
   font-size: 0.75rem;
   color: rgb(55, 53, 53);
+  font-family: 'Nunito Sans';
 }
 
 #add-canvas {
@@ -109,15 +147,15 @@ ul {
   text-align: center;
 }
 
-#delete-button {
-  margin: 1rem 0 1rem 1rem;
-  color: red;
-  font-weight: bold;
-  padding: 0.25rem;
+.mid-level-header {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
-#edit-note-header {
+.edit-header {
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 #greeting {
@@ -127,21 +165,33 @@ ul {
 #main-title {
   font-size: 4.5rem;
   text-align: center;
-  color: var(--primary)
+  color: var(--primary);
+  margin: 2rem 0 0 0;
+  font-family: 'Caveat', 'Nunito Sans', sans-serif;
+}
+
+#sub-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--primary);
+  margin-top: -0.5rem;
+  font-family: 'Caveat', 'Nunito Sans', sans-serif;
 }
 
 #nav-link-logout {
   color: red;
+  font-size: 1.25rem;
 }
 
 #nav-links-ul {
   text-align: right;
-  margin: 1rem 2rem 0 0;
+  margin: 1rem 1.25rem 0 0;
+  padding-bottom: 1rem;
 }
 
-#new-note-form {
+/* #new-note-form {
   margin: 1rem 0 1rem 1rem;
-}
+} */
 
 #original-note-content {
   margin: 1rem 0 1rem 1rem;
@@ -156,7 +206,7 @@ ul {
 
 /* Color variables */
 :root {
-  --primary: #17BEBB;
+  --primary: #119290;
   --secondary: #8C1848;
   --secondary-light: #DE3F82;
   --tertiary: #DE6E4B;

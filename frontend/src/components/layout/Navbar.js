@@ -13,6 +13,7 @@ function Navbar(props) {
     return (
         <nav>
             <h1 id="main-title">BRAINSTICKER</h1>
+            <h2 id="sub-title">Digital sticky notes</h2>
             <ul id="nav-links-ul">
                 {isAuth === true ? (
                     <Fragment>

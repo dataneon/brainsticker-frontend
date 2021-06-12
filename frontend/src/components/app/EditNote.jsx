@@ -57,7 +57,7 @@ function EditNote() {
             {loading === false &&
                 (
                     <Fragment>
-                        <h2 id="edit-note-header">Edit Note</h2>
+                        <h3 className="mid-level-header">Edit Note</h3>
                         <p id="original-note-content">Original content: {oldContent}</p>
                         <form onSubmit={handleSubmit} id="edit-note-form">
                             <label htmlFor="content">New content: </label>
@@ -70,7 +70,7 @@ function EditNote() {
                             <button type="submit" class="form-button">Submit</button>
                         </form>
                         <form onSubmit={handleDelete}>
-                            <button type="submit" id="delete-button">DELETE</button>
+                            <button type="submit" class="delete-button">DELETE</button>
                         </form>
                     </Fragment>
                 )

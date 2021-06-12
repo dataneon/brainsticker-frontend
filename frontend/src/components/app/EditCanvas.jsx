@@ -11,7 +11,7 @@ function EditCanvas(props) {
 
     const [oldName, setOldName] = useState()
 
-    // this is used as a guard operator for useEffect
+    // `loading` is used as a guard operator for `useEffect`
     const [loading, setLoading] = useState()
 
     // function to retrieve original name of canvas
@@ -29,7 +29,7 @@ function EditCanvas(props) {
         setFormState({ ...formState, [event.target.id]: event.target.value});
     };
 
-    // updates the canvas name using `axios.patch()`
+    // update the canvas name using `axios.patch()`
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(formState);
@@ -40,7 +40,7 @@ function EditCanvas(props) {
         setFormState(initialState);
     }
 
-    // deletes the canvas using `axios.delete()`
+    // delete the canvas using `axios.delete()`
     const handleDelete = (event) => {
         event.preventDefault();
         axios.delete(`http://localhost:8000/canvases/${canvasID}`)
@@ -54,19 +54,19 @@ function EditCanvas(props) {
             {loading === false &&
                 (
                     <Fragment>
-                        <h3>Edit Canvas "{oldName}"</h3>
+                        <h3 className="mid-level-header">Edit Canvas "{oldName}"</h3>
                         <form onSubmit={handleSubmit}>
-                            <label htmlFor="canvas_name">Canvas name:</label>
+                            <label htmlFor="canvas_name">New canvas name: </label>
                             <input
                                 id="canvas_name"
                                 type="text"
                                 onChange={handleChange}
                                 value={formState.canvas_name}
                             />
-                            <button type="submit">Submit</button>
+                            <button type="submit" className="form-button">Submit</button>
                         </form>
                         <form onSubmit={handleDelete}>
-                            <button type="submit">DELETE</button>
+                            <button type="submit" className="delete-button">DELETE</button>
                         </form>
                     </Fragment>
                 )

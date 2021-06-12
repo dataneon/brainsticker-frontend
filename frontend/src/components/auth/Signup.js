@@ -101,7 +101,7 @@ function Signup() {
           required
         />{' '}
         <br />
-        <input type='submit' value='Signup' />
+        <input type='submit' value='Signup' className="auth-input-buttons"/>
       </form>
     </div>
   );

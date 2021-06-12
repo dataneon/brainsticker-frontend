@@ -89,7 +89,7 @@ function Login() {
             onChange={e => setPassword(e.target.value)}
           />{' '}
           <br />
-          <input type='submit' value='Login' />
+          <input type='submit' value='Login' className="auth-input-buttons" />
         </form>
       )}
     </div>

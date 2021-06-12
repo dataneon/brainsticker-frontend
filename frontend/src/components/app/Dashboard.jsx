@@ -33,7 +33,7 @@ function Dashboard() {
   <div id="dashboard">
     {loading === false && (
       <Fragment>
-        <h2 id="dashboard-header">Dashboard</h2>
+        <h3 className="mid-level-header">Dashboard</h3>
         <h4 id="greeting">Hello, {userEmail}!</h4>
         <p></p>
         {/* send userID to CanvasList as props */}

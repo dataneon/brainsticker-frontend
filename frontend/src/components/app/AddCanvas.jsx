@@ -34,7 +34,7 @@ function AddCanvas({userID}) {
                     onChange={handleChange}
                     value={formState.canvas_name}
                 />
-                <button type="submit" className="form-button">Submit</button>
+                <button type="submit" className="form-button">Add</button>
             </form>
         </div>
     );
