@@ -22,7 +22,6 @@ function Canvas() {
         fetch(`http://localhost:8000/canvases/${canvasID}`)
             .then(res => res.json())
             .then(jsonInfo => {
-                console.log(jsonInfo)
                 setCanvasName(jsonInfo.canvas_name)
             })
             .then(setLoading(false))
