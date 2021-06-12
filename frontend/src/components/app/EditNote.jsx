@@ -13,6 +13,7 @@ function EditNote() {
         setFormState({ ...formState, [event.target.id]: event.target.value});
     };
 
+    // updates the note using `axios.patch()`
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(formState);
@@ -24,6 +25,7 @@ function EditNote() {
         setFormState(initialState);
     }
 
+    // deletes the note using `axios.delete()`
     const handleDelete = (event) => {
         event.preventDefault();
         axios.delete(`http://localhost:8000/notes/${noteID}`)

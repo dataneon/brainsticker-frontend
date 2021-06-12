@@ -14,15 +14,24 @@ function EditCanvas(props) {
         setFormState({ ...formState, [event.target.id]: event.target.value});
     };
 
+    // updates the canvas name using `axios.patch()`
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(formState);
-        // patch updates instead of adding a new element
         axios.patch(`http://localhost:8000/canvases/${canvasID}`, formState)
         .then(res => {
             window.location.replace(`http://localhost:3000/dashboard/`)
         })
         setFormState(initialState);
+    }
+
+    // deletes the canvas using `axios.delete()`
+    const handleDelete = (event) => {
+        event.preventDefault();
+        axios.delete(`http://localhost:8000/canvases/${canvasID}`)
+        .then(res => {
+            window.location.replace(`http://localhost:3000/dashboard/`)
+        })
     }
 
     return (
@@ -39,6 +48,9 @@ function EditCanvas(props) {
                     value={formState.canvas_name}
                 />
                 <button type="submit">Submit</button>
+            </form>
+            <form onSubmit={handleDelete}>
+                <button type="submit">DELETE</button>
             </form>
         </div>
     );
