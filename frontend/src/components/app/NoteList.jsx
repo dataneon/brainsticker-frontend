@@ -51,7 +51,7 @@ function NoteList({canvasID}) {
                     {/* <Link to={"/canvas/" + canvasID + "/note/" + tempID} > */}
                         {itemContent}{" "}
                     {/* </Link>{" "} */}
-                    <Link to={"/canvas/" + canvasID + "/editnote/" + tempID}>
+                    <Link to={"/canvas/" + canvasID + "/editnote/" + tempID} >
                         (edit)
                     </Link>{" "}
                 </p>
