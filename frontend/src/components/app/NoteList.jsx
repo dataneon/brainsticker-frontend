@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 // this is called by Canvas
 function NoteList({canvasID}) {
     // `canvasID` is the canvas_id, and it is a string of a number
-    console.log(typeof canvasID, canvasID)
+    // console.log(typeof canvasID, canvasID)
     const [loading, setLoading] = useState(true);
     const [notes, setNotes] = useState([]);
 
@@ -20,13 +20,13 @@ function NoteList({canvasID}) {
         fetch('http://localhost:8000/notes/')
             .then(res => res.json())
             .then(jsonInfo => {
-                console.log(jsonInfo)
-                console.log(typeof jsonInfo[0].canvas, jsonInfo[0].canvas)
+                // console.log(jsonInfo)
+                // console.log(typeof jsonInfo[0].canvas, jsonInfo[0].canvas)
                 let tempNotes = []
                 for (let i = 0; i < jsonInfo.length; i++) {
                     // check notes for those with matching `canvasID`
                     // by parsing `canvasID` as an integer
-                    console.log(parseInt(canvasID))
+                    // console.log(parseInt(canvasID))
                     if (jsonInfo[i].canvas === parseInt(canvasID)) {
                         let tempObj = jsonInfo[i]
                         let slugNum = getNoteURLID(tempObj.note_url)

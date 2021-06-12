@@ -7,7 +7,6 @@ import Signup from './components/auth/Signup';
 import Logout from './components/auth/Logout';
 import Dashboard from './components/app/Dashboard';
 import Canvas from './components/app/Canvas';
-import AddCanvas from './components/app/AddCanvas';
 import EditCanvas from './components/app/EditCanvas';
 import EditNote from './components/app/EditNote';
 
@@ -23,7 +22,6 @@ function App() {
           <Route path='/logout' component={Logout} exact />
           <Route path='/dashboard' component={Dashboard} exact />
           <Route path='/canvas/:canvasID' component={Canvas} exact />
-          {/* <Route path='/addcanvas/' component={AddCanvas} exact /> */}
           <Route path='/canvas/:canvasID/editcanvas/:userID' component={EditCanvas} exact />
           <Route path='/canvas/:canvasID/editnote/:noteID' component={EditNote} exact />
         </Switch>

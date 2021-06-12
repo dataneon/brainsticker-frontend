@@ -1,14 +1,29 @@
-import React, { useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 function EditCanvas(props) {
-    console.log(props)
     const { canvasID } = useParams()
     const { userID } = useParams()
 
     const initialState = {user: userID, canvas_name: ''};
     const [formState, setFormState] = useState(initialState)
+
+    const [oldName, setOldName] = useState()
+
+    // this is used as a guard operator for useEffect
+    const [loading, setLoading] = useState()
+
+    // function to retrieve original name of canvas
+    useEffect(() => {
+        fetch(`http://localhost:8000/canvases/${canvasID}`)
+            .then(res => res.json())
+            .then(jsonInfo => {
+                console.log(jsonInfo)
+                setOldName(jsonInfo.canvas_name)
+            })
+            .then(setLoading(false))
+    }, [])
 
     const handleChange = (event) => {
         setFormState({ ...formState, [event.target.id]: event.target.value});
@@ -36,22 +51,26 @@ function EditCanvas(props) {
 
     return (
         <div>
-            This is EditCanvas, editing canvas {canvasID} {" "}
-            from user {userID}
-            <br />
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="canvas_name">Canvas name:</label>
-                <input
-                    id="canvas_name"
-                    type="text"
-                    onChange={handleChange}
-                    value={formState.canvas_name}
-                />
-                <button type="submit">Submit</button>
-            </form>
-            <form onSubmit={handleDelete}>
-                <button type="submit">DELETE</button>
-            </form>
+            {loading === false &&
+                (
+                    <Fragment>
+                        Editing canvas "{oldName}"
+                        <form onSubmit={handleSubmit}>
+                            <label htmlFor="canvas_name">Canvas name:</label>
+                            <input
+                                id="canvas_name"
+                                type="text"
+                                onChange={handleChange}
+                                value={formState.canvas_name}
+                            />
+                            <button type="submit">Submit</button>
+                        </form>
+                        <form onSubmit={handleDelete}>
+                            <button type="submit">DELETE</button>
+                        </form>
+                    </Fragment>
+                )
+            }
         </div>
     );
 }

@@ -5,6 +5,9 @@ import { DataContext } from '../DataContext';
 // this will be called by Dashboard to pull up a user's canvases
 function CanvasList({userID}) {
     const [canvases, setCanvases] = useState([]);
+
+    // loading is used as a guard operator that waits
+    // for the useEffect to be completed
     const [loading, setLoading] = useState(true);
 
     // function gets the last digits of the url
@@ -62,10 +65,14 @@ function CanvasList({userID}) {
     
     return (
         <div>
-            <DataContext.Provider value={userID}>
-            <h3>List of canvases</h3>
-            {list}
-            </DataContext.Provider>
+            {loading === false &&
+                (
+                    <DataContext.Provider value={userID}>
+                    <h3>List of canvases</h3>
+                    {list}
+                    </DataContext.Provider>
+                )
+            }
         </div>
     );
 }

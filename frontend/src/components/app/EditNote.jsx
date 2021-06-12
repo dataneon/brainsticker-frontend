@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
@@ -8,6 +8,22 @@ function EditNote() {
 
     const initialState = {canvas: canvasID, content: ''};
     const [formState, setFormState] = useState(initialState);
+
+    const [oldContent, setOldContent] = useState();
+
+    // `loading` is used as a guard operator to wait until `useEffect` is finished
+    const [loading, setLoading] = useState(true);
+
+    // function to retrieve original content
+    useEffect(() => {
+        fetch(`http://localhost:8000/notes/${noteID}`)
+            .then(res => res.json())
+            .then(jsonInfo => {
+                console.log(jsonInfo)
+                setOldContent(jsonInfo.content)
+            })
+            .then(setLoading(false))
+    }, [])
 
     const handleChange = (event) => {
         setFormState({ ...formState, [event.target.id]: event.target.value});
@@ -36,20 +52,28 @@ function EditNote() {
 
     return (
         <div>
-            EditNote {noteID} from canvas {canvasID}
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="content">Content:</label>
-                <input
-                    id="content"
-                    type="text"
-                    onChange={handleChange}
-                    value={formState.content}
-                />
-                <button type="submit">Submit</button>
-            </form>
-            <form onSubmit={handleDelete}>
-                <button type="submit">DELETE</button>
-            </form>
+            {loading === false &&
+                (
+                    <Fragment>
+                        {/* <h4>EditNote {noteID} from canvas {canvasID}</h4> */}
+                        <h4>Edit note</h4>
+                        <p>Original content: {oldContent}</p>
+                        <form onSubmit={handleSubmit}>
+                            <label htmlFor="content">New content: </label>
+                            <input
+                                id="content"
+                                type="text"
+                                onChange={handleChange}
+                                value={formState.content}
+                            />
+                            <button type="submit">Submit</button>
+                        </form>
+                        <form onSubmit={handleDelete}>
+                            <button type="submit">DELETE</button>
+                        </form>
+                    </Fragment>
+                )
+            }
         </div>
     );
 }

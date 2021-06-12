@@ -22,9 +22,9 @@ function AddNote({canvasID}) {
 
     return (
         <div>
-            Add a note for canvas {canvasID}:
+            Add a note:
             <form onSubmit={handleSubmit}>
-                <label htmlFor="content">Content:</label>
+                <label htmlFor="content">Content: </label>
                 <input
                     id="content"
                     type="text"

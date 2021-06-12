@@ -38,7 +38,7 @@ function Dashboard() {
         <p></p>
         {/* send userID to CanvasList as props */}
         <AddCanvas userID={userID}/>
-        <CanvasList userID = {userID}/>
+        <CanvasList userID={userID}/>
       </Fragment>
     )}
   </div>

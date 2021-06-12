@@ -30,7 +30,7 @@ function AddCanvas({userID}) {
         <div>
             Add new canvas:
             <form onSubmit={handleSubmit}>
-                <label htmlFor="canvas_name">Canvas name:</label>
+                <label htmlFor="canvas_name">Canvas name: </label>
                 <input
                     id="canvas_name"
                     type="text"
