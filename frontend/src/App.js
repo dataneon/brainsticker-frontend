@@ -24,7 +24,7 @@ function App() {
           <Route path='/dashboard' component={Dashboard} exact />
           <Route path='/canvas/:canvasID' component={Canvas} exact />
           {/* <Route path='/addcanvas/' component={AddCanvas} exact /> */}
-          <Route path='/canvas/:canvasID/editcanvas/' component={EditCanvas} exact />
+          <Route path='/canvas/:canvasID/editcanvas/:userID' component={EditCanvas} exact />
           <Route path='/canvas/:canvasID/editnote/:noteID' component={EditNote} exact />
         </Switch>
       </Router>

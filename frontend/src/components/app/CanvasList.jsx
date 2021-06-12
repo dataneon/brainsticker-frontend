@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-// import { DataContext } from '../DataContext';
+import { DataContext } from '../DataContext';
 
 // this will be called by Dashboard to pull up a user's canvases
 function CanvasList({userID}) {
@@ -52,7 +52,7 @@ function CanvasList({userID}) {
                     <Link to={"/canvas/" + tmp_id} >
                         {tmp_name}
                     </Link>{" "}
-                    <Link to={"/canvas/" + tmp_id + "/editcanvas/"} >
+                    <Link to={"/canvas/" + tmp_id + "/editcanvas/" + userID} >
                         (edit)
                     </Link>{" "}
                 </p>
@@ -62,10 +62,10 @@ function CanvasList({userID}) {
     
     return (
         <div>
-            {/* <DataContext.Provider value={userID}> */}
-            {/* </DataContext.Provider> */}
+            <DataContext.Provider value={userID}>
             <h3>List of canvases</h3>
             {list}
+            </DataContext.Provider>
         </div>
     );
 }

@@ -10,7 +10,7 @@ function EditNote() {
     const [formState, setFormState] = useState(initialState);
 
     const handleChange = (event) => {
-        setFormState({... formState, [event.target.id]: event.target.value});
+        setFormState({ ...formState, [event.target.id]: event.target.value});
     };
 
     const handleSubmit = (event) => {
