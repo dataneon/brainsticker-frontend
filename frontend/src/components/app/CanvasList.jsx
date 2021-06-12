@@ -68,7 +68,7 @@ function CanvasList({userID}) {
                 (
                     <Fragment>
                         <DataContext.Provider value={userID}>
-                        <h3>List of canvases</h3>
+                        <h3>Your canvases</h3>
                         {list}
                         </DataContext.Provider>
                     </Fragment>

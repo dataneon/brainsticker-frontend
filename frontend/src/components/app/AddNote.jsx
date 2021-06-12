@@ -30,7 +30,7 @@ function AddNote({canvasID}) {
                     onChange={handleChange}
                     value={formState.content}
                 />
-                <button type="submit">Submit</button>
+                <button type="submit" className="form-button">Submit</button>
             </form>
         </div>
     );

@@ -7,8 +7,8 @@ import Navbar from '../layout/Navbar'
 function Welcome(props) {
     return (
         <div>
-            <Header />
-            <Navbar />
+            {/* <Header /> */}
+            {/* <Navbar /> */}
             <Signup />
             <Login />
         </div>

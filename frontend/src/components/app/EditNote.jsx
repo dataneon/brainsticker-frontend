@@ -67,7 +67,7 @@ function EditNote() {
                                 onChange={handleChange}
                                 value={formState.content}
                             />
-                            <button type="submit">Submit</button>
+                            <button type="submit" class="form-button">Submit</button>
                         </form>
                         <form onSubmit={handleDelete}>
                             <button type="submit" id="delete-button">DELETE</button>
