@@ -21,10 +21,9 @@ function AddNote({canvasID}) {
     }
 
     return (
-        <div>
-            Add a note:
+        <div id="new-note-form">
             <form onSubmit={handleSubmit}>
-                <label htmlFor="content">Content: </label>
+                <label htmlFor="content">Add a new note: </label>
                 <input
                     id="content"
                     type="text"

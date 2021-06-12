@@ -49,21 +49,21 @@ function CanvasList({userID}) {
         let tmp_id = item.slugNum
 
         return (
-            <div className="canvas" key={tmp_id}>
-                <p>
+            <ul className="canvas" key={tmp_id}>
+                <li>
                     <Link to={"/canvas/" + tmp_id} >
-                        {tmp_name}
+                        <span className="canvas-li-name">{tmp_name}</span>
                     </Link>{" "}
                     <Link to={"/canvas/" + tmp_id + "/editcanvas/" + userID} >
-                        (edit)
+                    <span className="edit-span">(edit)</span>
                     </Link>{" "}
-                </p>
-            </div>
+                </li>
+            </ul>
         )
     })
     
     return (
-        <div>
+        <div className="canvas-list">
             {loading === false &&
                 (
                     <Fragment>

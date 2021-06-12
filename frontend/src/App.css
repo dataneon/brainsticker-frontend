@@ -3,15 +3,133 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* background color */
+  background-color: #372F32;
+
+  color: white;
+}
+
 a {
   text-decoration: none;
 }
+
+ul {
+  list-style-type: none;
+}
+
+.canvas-li-name {
+  color: var(--secondary-light);
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.canvas-list {
+  margin: 2rem 0 0 1rem;
+}
+
+.nav-links {
+  color: #DE6E4B;
+  font-weight: bold;
+}
+
+.note-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.note {
+  color: black;
+  margin: 1rem;
+  background-color: lightseagreen;
+  height: 10rem;
+  width: 15rem;
+  padding: 1rem;
+  font-weight: bold;
+}
+
+.edit-span {
+  font-size: 0.75rem;
+  color: lightgray;
+}
+
+.edit-note-span {
+  font-size: 0.75rem;
+  color: rgb(55, 53, 53);
+}
+
+#add-canvas {
+  margin: 1rem 0 1rem;
+}
+
+#canvas-header {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+#dashboard {
+  margin-left: 2rem;
+}
+
+#dashboard-header {
+  font-size: 2rem;
+  text-align: center;
+}
+
+#edit-note-header {
+  text-align: center;
+}
+
+#greeting {
+  font-size: 1rem;
+}
+
+#main-title {
+  font-size: 4rem;
+  text-align: center;
+  color: var(--primary)
+}
+
+#nav-link-logout {
+  color: red;
+}
+
+#nav-links-ul {
+  text-align: right;
+  margin: 1rem 2rem 0 0;
+}
+
+#new-note-form {
+  margin: 1rem 0 1rem 1rem;
+}
+
+#original-note-content {
+  margin: 1rem 0 1rem 1rem;
+}
+
+#edit-note-form {
+  margin: 1rem 0 1rem 1rem;
+}
+
+#delete-button {
+  margin: 1rem 0 1rem 1rem;
+}
+
 
 /* Color variables */
 :root {
   --primary: #17BEBB;
   --secondary: #8C1848;
   --secondary-light: #DE3F82;
+  --tertiary: #DE6E4B;
   --white: #fff;
   /* Add a muted to the existing color variables in :root */
   --muted: #62555A;
@@ -23,7 +141,7 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-auto-rows: minmax(250px, auto);
-  grid-gap: 1rem;
+  grid-gap: 0.5rem;
   margin: 0 auto;
   max-width: 1200px;
   padding: 1rem;

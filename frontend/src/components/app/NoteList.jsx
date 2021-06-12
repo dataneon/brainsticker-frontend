@@ -45,14 +45,14 @@ function NoteList({canvasID}) {
         let tempID = item.slugNum
         return (
             <div className="note" key={tempID}>
-                <p>
+                <li>
                     {/* <Link to={"/canvas/" + canvasID + "/note/" + tempID} > */}
                         {itemContent}{" "}
                     {/* </Link>{" "} */}
                     <Link to={"/canvas/" + canvasID + "/editnote/" + tempID} >
-                        (edit)
+                        <span className="edit-note-span">(edit)</span>
                     </Link>{" "}
-                </p>
+                </li>
             </div>
         )
     })
@@ -62,10 +62,9 @@ function NoteList({canvasID}) {
             {loading === false && 
                 (
                     <Fragment>
-                    <h3>List of notes</h3>
-                    <div className="note-list">
+                    <ul className="note-list">
                         {list}
-                    </div>
+                    </ul>
                     </Fragment>
                 )
             }

@@ -54,7 +54,7 @@ function EditCanvas(props) {
             {loading === false &&
                 (
                     <Fragment>
-                        Editing canvas "{oldName}"
+                        <h3>Edit Canvas "{oldName}"</h3>
                         <form onSubmit={handleSubmit}>
                             <label htmlFor="canvas_name">Canvas name:</label>
                             <input

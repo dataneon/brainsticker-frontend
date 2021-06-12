@@ -30,11 +30,11 @@ function Dashboard() {
   }, []);
 
   return (
-  <div>
+  <div id="dashboard">
     {loading === false && (
       <Fragment>
-        <h2>Dashboard</h2>
-        <h4>Hello {userEmail}!</h4>
+        <h2 id="dashboard-header">Dashboard</h2>
+        <h4 id="greeting">Hello, {userEmail}!</h4>
         <p></p>
         {/* send userID to CanvasList as props */}
         <AddCanvas userID={userID}/>

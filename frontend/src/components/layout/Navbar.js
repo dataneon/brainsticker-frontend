@@ -12,26 +12,26 @@ function Navbar(props) {
     
     return (
         <nav>
-            <h1>Brainsticker</h1>
-            <ul>
+            <h1 id="main-title">BRAINSTICKER</h1>
+            <ul id="nav-links-ul">
                 {isAuth === true ? (
                     <Fragment>
                         {' '}
                         <li>
-                            <Link to='/dashboard'>Dashboard</Link>
+                            <Link to='/dashboard' className="nav-links">Dashboard</Link>
                         </li>
                         <li>
-                            <Link to='/logout'>Logout</Link>
+                            <Link to='/logout' className="nav-links" id="nav-link-logout">Logout</Link>
                         </li>
                     </Fragment>
                 ) : (
                     <Fragment>
                         {' '}
-                        <li>
-                            <Link to='/login'>Login</Link>
+                        <li className="nav-links">
+                            <Link to='/login' className="nav-links">Login</Link>
                         </li>
-                        <li>
-                            <Link to='/signup'>Signup</Link>
+                        <li className="nav-links">
+                            <Link to='/signup' className="nav-links">Signup</Link>
                         </li>
                     </Fragment>
                 )}

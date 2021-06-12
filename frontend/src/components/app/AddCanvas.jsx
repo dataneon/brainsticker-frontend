@@ -27,10 +27,9 @@ function AddCanvas({userID}) {
     };
     // Note that we need to use `htmlFor` instead of `for` in JSX
     return (
-        <div>
-            Add new canvas:
+        <div id="add-canvas">
             <form onSubmit={handleSubmit}>
-                <label htmlFor="canvas_name">Canvas name: </label>
+                <label htmlFor="canvas_name">Add new canvas: </label>
                 <input
                     id="canvas_name"
                     type="text"

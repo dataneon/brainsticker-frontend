@@ -57,10 +57,9 @@ function EditNote() {
             {loading === false &&
                 (
                     <Fragment>
-                        {/* <h4>EditNote {noteID} from canvas {canvasID}</h4> */}
-                        <h4>Edit note</h4>
-                        <p>Original content: {oldContent}</p>
-                        <form onSubmit={handleSubmit}>
+                        <h2 id="edit-note-header">Edit Note</h2>
+                        <p id="original-note-content">Original content: {oldContent}</p>
+                        <form onSubmit={handleSubmit} id="edit-note-form">
                             <label htmlFor="content">New content: </label>
                             <input
                                 id="content"
@@ -71,7 +70,7 @@ function EditNote() {
                             <button type="submit">Submit</button>
                         </form>
                         <form onSubmit={handleDelete}>
-                            <button type="submit">DELETE</button>
+                            <button type="submit" id="delete-button">DELETE</button>
                         </form>
                     </Fragment>
                 )
