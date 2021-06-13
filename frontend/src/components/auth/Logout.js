@@ -5,7 +5,7 @@ function Logout() {
 
   useEffect(() => {
     if (localStorage.getItem('token') == null) {
-      window.location.replace('http://brainsticker-frontend.surge.sh/login');
+      window.location.replace('http://brainsticker-frontend.surge.sh/login/');
     } else {
       setLoading(false);
     }
@@ -25,7 +25,7 @@ function Logout() {
       .then(data => {
         console.log(data);
         localStorage.clear();
-        window.location.replace('http://brainsticker-frontend.surge.sh/login');
+        window.location.replace('http://brainsticker-frontend.surge.sh/login/');
       });
   };
 

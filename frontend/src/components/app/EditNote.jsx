@@ -18,7 +18,7 @@ function EditNote() {
 
     // function to retrieve original content
     useEffect(() => {
-        fetch(`https://brainsticker.herokuapp.com/notes/${noteID}`)
+        fetch(`https://brainsticker.herokuapp.com/notes/${noteID}/`)
             .then(res => res.json())
             .then(jsonInfo => {
                 // console.log(jsonInfo)
@@ -35,7 +35,7 @@ function EditNote() {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(formState);
-        axios.patch(`https://brainsticker.herokuapp.com/notes/${noteID}`, formState)
+        axios.patch(`https://brainsticker.herokuapp.com/notes/${noteID}/`, formState)
         .then(res => {
             window.location.replace(`brainsticker-frontend.surge.sh/canvas/${canvasID}`)
         })
@@ -46,7 +46,7 @@ function EditNote() {
     // deletes the note using `axios.delete()`
     const handleDelete = (event) => {
         event.preventDefault();
-        axios.delete(`https://brainsticker.herokuapp.com/notes/${noteID}`)
+        axios.delete(`https://brainsticker.herokuapp.com/notes/${noteID}/`)
         .then(res => {
             window.location.replace(`brainsticker-frontend.surge.sh/canvas/${canvasID}`)
         })

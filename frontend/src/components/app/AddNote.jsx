@@ -14,7 +14,7 @@ function AddNote({canvasID}) {
         console.log(formState);
         axios.post("https://brainsticker.herokuapp.com/notes/", formState)
         .then(res => {
-            window.location.replace(`http://brainsticker-frontend.surge.sh/canvas/${canvasID}`)
+            window.location.replace(`http://brainsticker-frontend.surge.sh/canvas/${canvasID}/`)
         })
         // clear the form
         setFormState(initialState);
