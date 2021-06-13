@@ -37,7 +37,7 @@ function EditNote() {
         console.log(formState);
         axios.patch(`https://brainsticker.herokuapp.com/notes/${noteID}`, formState)
         .then(res => {
-            window.location.replace(`http://localhost:3000/canvas/${canvasID}`)
+            window.location.replace(`brainsticker-frontend.surge.sh/canvas/${canvasID}`)
         })
         // clear the form
         setFormState(initialState);
@@ -48,7 +48,7 @@ function EditNote() {
         event.preventDefault();
         axios.delete(`https://brainsticker.herokuapp.com/notes/${noteID}`)
         .then(res => {
-            window.location.replace(`http://localhost:3000/canvas/${canvasID}`)
+            window.location.replace(`brainsticker-frontend.surge.sh/canvas/${canvasID}`)
         })
     }
 

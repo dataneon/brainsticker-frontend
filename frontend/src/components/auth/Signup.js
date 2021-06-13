@@ -13,7 +13,7 @@ function Signup() {
 
   useEffect(() => {
     if (localStorage.getItem('token') !== null) {
-      window.location.replace('http://localhost:3000/dashboard');
+      window.location.replace('http://brainsticker-frontend.surge.sh/dashboard');
     } else {
       setLoading(false);
     }
@@ -47,7 +47,7 @@ function Signup() {
           localStorage.clear();
           localStorage.setItem('token', data.key);
           // redirect the now authenticated user to the dashboard
-          window.location.replace('http://localhost:3000/dashboard');
+          window.location.replace('http://brainsticker-frontend.surge.sh/dashboard');
         } else {
           // handles any errors
           setEmail('');

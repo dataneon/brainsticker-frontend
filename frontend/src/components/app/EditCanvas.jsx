@@ -16,7 +16,7 @@ function EditCanvas(props) {
 
     // function to retrieve original name of canvas
     useEffect(() => {
-        fetch(`http://localhost:8000/canvases/${canvasID}`)
+        fetch(`http://brainsticker-frontend.surge.sh/canvases/${canvasID}`)
             .then(res => res.json())
             .then(jsonInfo => {
                 console.log(jsonInfo)
@@ -35,7 +35,7 @@ function EditCanvas(props) {
         console.log(formState);
         axios.patch(`https://brainsticker.herokuapp.com/canvases/${canvasID}`, formState)
         .then(res => {
-            window.location.replace(`http://localhost:3000/dashboard/`)
+            window.location.replace(`http://brainsticker-frontend.surge.sh/dashboard/`)
         })
         setFormState(initialState);
     }
@@ -45,7 +45,7 @@ function EditCanvas(props) {
         event.preventDefault();
         axios.delete(`https://brainsticker.herokuapp.com/canvases/${canvasID}`)
         .then(res => {
-            window.location.replace(`http://localhost:3000/dashboard/`)
+            window.location.replace(`http://brainsticker-frontend.surge.sh/dashboard/`)
         })
     }
 

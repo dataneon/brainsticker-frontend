@@ -10,7 +10,7 @@ function Dashboard() {
   useEffect(() => {
     // if local storage does not have user's token, send to login page
     if (localStorage.getItem('token') === null) {
-      window.location.replace('http://localhost:3000/login');
+      window.location.replace('http://brainsticker-frontend.surge.sh/login');
     // else authorize user via backend
     } else {
       fetch('https://brainsticker.herokuapp.com/canvases/api/v1/users/auth/user/', {
