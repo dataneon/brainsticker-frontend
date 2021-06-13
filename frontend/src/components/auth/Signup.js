@@ -32,7 +32,7 @@ function Signup() {
     };
 
     // fetch request uses `user`
-    fetch('https://brainsticker.herokuapp.com/notes/api/v1/users/auth/register/', {
+    fetch('https://brainsticker.herokuapp.com/api/v1/users/auth/register/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

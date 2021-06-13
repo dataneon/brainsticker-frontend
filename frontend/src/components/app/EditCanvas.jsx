@@ -16,7 +16,7 @@ function EditCanvas(props) {
 
     // function to retrieve original name of canvas
     useEffect(() => {
-        fetch(`http://brainsticker-frontend.surge.sh/canvases/${canvasID}`)
+        fetch(`https://brainsticker.herokuapp.com/canvases/${canvasID}`)
             .then(res => res.json())
             .then(jsonInfo => {
                 console.log(jsonInfo)

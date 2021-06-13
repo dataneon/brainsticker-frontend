@@ -14,7 +14,7 @@ function Logout() {
   const handleLogout = e => {
     e.preventDefault();
 
-    fetch('https://brainsticker.herokuapp.com/notes/api/v1/users/auth/logout/', {
+    fetch('https://brainsticker.herokuapp.com/api/v1/users/auth/logout/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

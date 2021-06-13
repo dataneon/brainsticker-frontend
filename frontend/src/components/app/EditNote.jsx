@@ -18,7 +18,7 @@ function EditNote() {
 
     // function to retrieve original content
     useEffect(() => {
-        fetch(`http://localhost:8000/notes/${noteID}`)
+        fetch(`https://brainsticker.herokuapp.com/notes/${noteID}`)
             .then(res => res.json())
             .then(jsonInfo => {
                 // console.log(jsonInfo)

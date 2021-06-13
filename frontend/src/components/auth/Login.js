@@ -29,7 +29,7 @@ function Login() {
     };
 
     // fetch request uses `user`
-    fetch('https://brainsticker.herokuapp.com/notes/api/v1/users/auth/login/', {
+    fetch('https://brainsticker.herokuapp.com/api/v1/users/auth/login/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
