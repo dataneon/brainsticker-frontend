@@ -9,8 +9,7 @@ function CanvasList({userID}) {
     // loading is used as a guard operator that waits for useEffect
     const [loading, setLoading] = useState(true);
 
-    // function gets the last digits of the url
-    // which is also a unique number for the canvas
+    // function gets the last digits of the url, acting as unique number for canvas
     function getCanvasURLID (urlString) {
         let n = urlString.search('/canvases/')
         let idStartPoint = n + 10

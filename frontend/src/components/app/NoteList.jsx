@@ -8,6 +8,7 @@ function NoteList({canvasID}) {
     const [loading, setLoading] = useState(true);
     const [notes, setNotes] = useState([]);
 
+    // function to retrieve last part of url to act as ID
     function getNoteURLID(urlString) {
         let n = urlString.search('/notes/');
         let idStartpoint = n + 7;
@@ -20,8 +21,6 @@ function NoteList({canvasID}) {
         fetch('http://localhost:8000/notes/')
             .then(res => res.json())
             .then(jsonInfo => {
-                // console.log(jsonInfo)
-                // console.log(typeof jsonInfo[0].canvas, jsonInfo[0].canvas)
                 let tempNotes = []
                 for (let i = 0; i < jsonInfo.length; i++) {
                     // check notes for those with matching `canvasID`
@@ -46,9 +45,7 @@ function NoteList({canvasID}) {
         return (
             <div className="note" key={tempID}>
                 <li>
-                    {/* <Link to={"/canvas/" + canvasID + "/note/" + tempID} > */}
-                        {itemContent}{" "}
-                    {/* </Link>{" "} */}
+                    {itemContent}{" "}
                     <Link to={"/canvas/" + canvasID + "/editnote/" + tempID} >
                         <span className="edit-note-span">(edit)</span>
                     </Link>{" "}

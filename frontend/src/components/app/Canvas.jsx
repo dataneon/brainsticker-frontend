@@ -4,13 +4,12 @@ import AddNote from './AddNote';
 import NoteList from './NoteList';
 
 // this loads an individual canvas, linked to from CanvasList
-// it will receive the canvas id by using the url via `useParams()`
 function Canvas() {
     // Because we designated the path to the canvas as `/canvas/:canvasID` in `app.js`
     // we need to write the props as such
     const { canvasID } = useParams() 
     // this id comes from the url, specifically what comes after `/canvas/` 
-    // `canvasID`, when grabbed using `useParams()` is a string
+    // `canvasID`, when taken using `useParams()`, is a string
 
     const [canvasName, setCanvasName] = useState()
     
@@ -27,7 +26,6 @@ function Canvas() {
             .then(setLoading(false))
     }, [])
 
-
     return (
         <div>
             {loading === false &&
@@ -35,7 +33,6 @@ function Canvas() {
                     <Fragment>
                         <h2 className="mid-level-header">Canvas: {canvasName}</h2>
                         <AddNote canvasID={canvasID} />
-                        {/* <p>List of notes for canvas:</p> */}
                         <NoteList canvasID={canvasID} />
                     </Fragment>
                 )

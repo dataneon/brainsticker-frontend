@@ -29,7 +29,7 @@ form {
   margin: 1rem 0 3rem 1.5rem;
 }
 
-/* Style the button and tell it not to grow */
+/* styling form buttons */
 .form-button {
   background-color: var(--primary);
   border: 0;
@@ -46,13 +46,10 @@ form {
 /* input fields */
 input {
   background-color: #EBAC98;
-  /* border: 2px solid white; */
   color: var(--muted);
   flex-grow: 0;
   font-size: 1.1rem;
-  /* padding: 0.5rem 1rem; */
   width: 25%;
-  /* font-weight: bold; */
 }
 
 nav {
@@ -189,10 +186,6 @@ ul {
   padding-bottom: 1rem;
 }
 
-/* #new-note-form {
-  margin: 1rem 0 1rem 1rem;
-} */
-
 #original-note-content {
   margin: 1rem 0 1rem 1rem;
 }
@@ -200,9 +193,6 @@ ul {
 #edit-note-form {
   margin: 1rem 0 1rem 1rem;
 }
-
-
-
 
 /* Color variables */
 :root {

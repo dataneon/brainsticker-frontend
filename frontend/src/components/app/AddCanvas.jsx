@@ -14,7 +14,7 @@ function AddCanvas({userID}) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // do something with the data in the component state
+        // post to db using `axios.post()`
         axios.post('http://localhost:8000/canvases/', formState)
         .then(res => {
             window.location.replace('http://localhost:3000/dashboard')
