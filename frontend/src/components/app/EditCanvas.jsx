@@ -33,7 +33,7 @@ function EditCanvas(props) {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(formState);
-        axios.patch(`http://localhost:8000/canvases/${canvasID}`, formState)
+        axios.patch(`https://brainsticker.herokuapp.com/canvases/${canvasID}`, formState)
         .then(res => {
             window.location.replace(`http://localhost:3000/dashboard/`)
         })
@@ -43,7 +43,7 @@ function EditCanvas(props) {
     // delete the canvas using `axios.delete()`
     const handleDelete = (event) => {
         event.preventDefault();
-        axios.delete(`http://localhost:8000/canvases/${canvasID}`)
+        axios.delete(`https://brainsticker.herokuapp.com/canvases/${canvasID}`)
         .then(res => {
             window.location.replace(`http://localhost:3000/dashboard/`)
         })

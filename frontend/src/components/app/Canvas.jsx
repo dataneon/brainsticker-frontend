@@ -18,7 +18,7 @@ function Canvas() {
 
     // function to retrieve canvas name
     useEffect(() => {
-        fetch(`http://localhost:8000/canvases/${canvasID}`)
+        fetch(`https://brainsticker.herokuapp.com/canvases/${canvasID}`)
             .then(res => res.json())
             .then(jsonInfo => {
                 setCanvasName(jsonInfo.canvas_name)

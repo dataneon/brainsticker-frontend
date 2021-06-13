@@ -35,7 +35,7 @@ function EditNote() {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(formState);
-        axios.patch(`http://localhost:8000/notes/${noteID}`, formState)
+        axios.patch(`https://brainsticker.herokuapp.com/notes/${noteID}`, formState)
         .then(res => {
             window.location.replace(`http://localhost:3000/canvas/${canvasID}`)
         })
@@ -46,7 +46,7 @@ function EditNote() {
     // deletes the note using `axios.delete()`
     const handleDelete = (event) => {
         event.preventDefault();
-        axios.delete(`http://localhost:8000/notes/${noteID}`)
+        axios.delete(`https://brainsticker.herokuapp.com/notes/${noteID}`)
         .then(res => {
             window.location.replace(`http://localhost:3000/canvas/${canvasID}`)
         })

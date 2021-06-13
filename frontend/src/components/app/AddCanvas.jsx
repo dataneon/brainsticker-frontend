@@ -15,7 +15,7 @@ function AddCanvas({userID}) {
     const handleSubmit = (event) => {
         event.preventDefault();
         // post to db using `axios.post()`
-        axios.post('http://localhost:8000/canvases/', formState)
+        axios.post('https://brainsticker.herokuapp.com/canvases/', formState)
         .then(res => {
             window.location.replace('http://localhost:3000/dashboard')
         })

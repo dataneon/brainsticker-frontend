@@ -18,7 +18,7 @@ function NoteList({canvasID}) {
     }
 
     useEffect(() => {
-        fetch('http://localhost:8000/notes/')
+        fetch('https://brainsticker.herokuapp.com/notes/')
             .then(res => res.json())
             .then(jsonInfo => {
                 let tempNotes = []

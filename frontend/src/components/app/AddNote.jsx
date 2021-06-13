@@ -12,7 +12,7 @@ function AddNote({canvasID}) {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(formState);
-        axios.post("http://localhost:8000/notes/", formState)
+        axios.post("https://brainsticker.herokuapp.com/notes/", formState)
         .then(res => {
             window.location.replace(`http://localhost:3000/canvas/${canvasID}`)
         })

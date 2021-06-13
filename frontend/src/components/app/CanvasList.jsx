@@ -21,7 +21,7 @@ function CanvasList({userID}) {
 
     // function to get canvases from localhost:8000/canvases/
     useEffect(() => {
-        fetch('http://localhost:8000/canvases/')
+        fetch('https://brainsticker.herokuapp.com/canvases/')
             .then(res => res.json())
             .then(jsonInfo => {
                 // array for current user's canvases
