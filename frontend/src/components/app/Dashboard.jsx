@@ -13,7 +13,7 @@ function Dashboard() {
       window.location.replace('http://brainsticker-frontend.surge.sh/login');
     // else authorize user via backend
     } else {
-      fetch('https://brainsticker.herokuapp.com/canvases/api/v1/users/auth/user/', {
+      fetch('https://brainsticker.herokuapp.com/api/v1/users/auth/user/', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
